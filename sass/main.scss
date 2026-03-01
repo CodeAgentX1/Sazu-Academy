@@ -1,0 +1,32 @@
+// 1. Abstracts (O'zgaruvchilar va mixinlar)
+@use "abstracts/functions";
+@use "abstracts/variables";
+@use "abstracts/mixins";
+
+// 2. Vendors (Tashqi kutubxonalar)
+@use "vendors/bootstrap";
+@use "vendors/jquery-ui";
+
+// 3. Base (Asosiy stillar)
+@use "base/reset";
+@use "base/typography";
+
+// 4. Layout (Maket qismlari)
+@use "layout/navigation";
+@use "layout/grid";
+@use "layout/header";
+@use "layout/footer";
+@use "layout/sidebar"; // Sidebar ham bor ekan, qo'shib qo'ydim
+
+// 5. Components (Komponentlar)
+@use "components/buttons";
+@use "components/carousel";
+@use "components/cover";
+@use "components/dropdown";
+
+// 6. Pages (Sahifalar)
+@use "pages/home";
+@use "pages/about";
+@use "pages/blog";
+@use "pages/contact";
+@use "pages/services";

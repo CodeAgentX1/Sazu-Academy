@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sazu Academy</title>
+<link rel="stylesheet" href="./sass/main.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+
+    <!-- LOGO -->
+    <a href="#" class="logo">
+      <img src="./images/logos/sazu.png" alt="Sazu Academy Logo">
+    </a>
+
+    <!-- SEARCH -->
+    <div class="search-box">
+      <input type="text" placeholder="Search courses...">
+      <div class="search-icon"><img src="./images/logos/search_input.svg" alt=""></div>
+    </div>
+
+    <!-- NAVIGATION -->
+    <nav class="nav">
+      <div class="mobile-nav-top">
+        <div class="search-box mobile-search">
+          <input type="text" placeholder="SEARCH">
+          <div class="search-icon"><img src="./images/logos/search_input.svg" alt=""></div>
+        </div>
+      </div>
+
+      <a class="mentor" href="#">Become a Mentor</a>
+
+      <div class="dropdown">
+        <button class="drop-btn">
+          Category
+          <span class="arrow"></span>
+        </button>
+        <div class="dropdown-menu">
+          <a href="#">Courses</a>
+          <a href="#">Detail Courses</a>
+          <a href="#">Blog</a>
+          <a href="#">Accaunt</a>
+        </div>
+      </div>
+
+      <a href="#" class="btn-outline">Login</a>
+      <a href="#" class="btn-primary">Sign Up</a>
+    </nav>
+
+    <!-- TOGGLE -->
+    <div class="menu-toggle">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+
+  </div>
+</header>
+
+<div class="mobile-overlay"></div>
+
+
+<main>
+   <section class="sazu-hero">
+    <div class="sazu-wrapper container">
+        <div class="sazu-container ">
+            <div class="sazu-content">
+                <h1 class="sazu-title">
+                   Best Professional Courses and Amazing Mentors
+                </h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui neque modi omnis. Delectus suscipit tenetur nisi nobis minus ad at dolores harum reiciendis, repellat excepturi? At perferendis nulla in perspiciatis?  </p>
+                
+                <div class="sazu-search-box">
+                    <input type="text" placeholder="Type in the course you want to learn">
+                    <button class="sazu-search-btn">Send</button>
+                </div>
+
+                <div class="sazu-stats">
+                    <div class="stat"><i class="far fa-clock"></i> Life Time Access</div>
+                    <div class="stat"><i class="fas fa-user-tie"></i> Expert Mentor</div>
+                    <div class="stat"><i class="fas fa-play-circle"></i> 100K+ Courses</div>
+                </div>
+            </div>
+
+            <div class="sazu-visual">
+                <div class="sazu-image-holder" style="background-image: url('./images/backgrounds/image.png');">
+                    <div class="floating-box bell"><i class="fas fa-bell"></i></div>
+                    <div class="floating-box heart"><i class="fas fa-heart"></i></div>
+                    <div class="floating-box check"><i class="fas fa-check-double"></i></div>
+                    <div class="review-card">
+                        <h4>500+</h4>
+                        <span>Total Review</span>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="./js/main.js"></script>
+</body>
+</html>

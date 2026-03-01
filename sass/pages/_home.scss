@@ -1,0 +1,178 @@
+$dark: #013220;
+$gold: #d4af37;
+$pink: #ff0066;
+$white: #ffffff;
+
+.sazu-hero {
+    min-height: 100vh;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+
+    .sazu-wrapper {
+        width: 100%;
+        background: radial-gradient(circle at top right, #02432d, $dark);
+        border-radius: 35px;
+        padding: 40px 20px; // Mobile padding
+        overflow: hidden;
+    }
+
+    .sazu-container {
+        display: flex;
+        flex-direction: column; // Mobile first
+        gap: 130px;
+        text-align: center;
+    }
+
+    .sazu-title {
+        font-size: 39px ; // Mobile font size
+        color: $white;
+        line-height: 1.2;
+        margin-bottom: 20px;
+        .red { color: #ff3e3e; }
+        .gold { color: $gold; }
+        max-width: 514px;
+    }
+    p{
+        color: rgba($white, 0.8);
+        font-size: 15px;
+        max-width: 614px;
+        line-height: 1.9;
+        color: $white;
+        line-height: 1.7;
+        margin-bottom: 20px;
+        .red { color: #ff3e3e; }
+        .gold { color: $gold; }
+        padding: 30px 0px;
+    }
+
+    // --- MOBILE SEARCH INPUT (Rasm kabi) ---
+    .sazu-search-box {
+        display: flex;
+        background: $white;
+        border-radius: 30px;
+        padding: 5px;
+        width: 100%;
+        max-width: 450px;
+        margin: 0 auto 30px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+
+        input {
+            flex: 1;
+            border: none;
+            outline: none;
+            padding: 12px 15px;
+            font-size: 14px;
+            width: 50%; // Siqilishni oldini oladi
+            border-radius: 100px;
+        }
+
+        .sazu-search-btn {
+            background: linear-gradient(90deg, #3e7a2c, #28371c);
+            color: $white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 100px;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            white-space: nowrap; // Tugma buzilmaydi
+        }
+    }
+
+    .sazu-stats {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        color: rgba($white, 0.9);
+        font-size: 12px;
+        .stat i { color: $gold; margin-right: 5px; }
+    }
+
+    // --- IMAGE HOLDER (O'ng tomon) ---
+    // O'lchamlarni shu yerda o'zgartiring
+$card-width-desktop: 1050px; 
+$card-height-desktop: 490px;
+
+$card-width-mobile: 90%; // Mobil uchun foizda bergan ma'qul
+$card-height-mobile: 350px;
+
+.sazu-visual {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .sazu-image-holder {
+        // Desktop o'lchami
+        width: $card-width-desktop;
+        height: $card-height-desktop;
+        
+        background-size: cover;
+        background-position: center;
+        border-radius: 30px;
+        position: relative;
+        
+        // Agar rasm ichidagi elementlar (ikonkalar) rasm o'zgarganda qochib ketsa
+        // ularni "absolute" joylashuvini qayta tekshirish kerak.
+
+        // MOBILE RESPONSIVE (Aynan mana shu yerda mobil o'lcham o'zgaradi)
+        @media (max-width: 992px) {
+            width: $card-width-mobile;
+            height: $card-height-mobile;
+        }
+        
+        @media (max-width: 480px) {
+            height: 300px; // Juda kichik telefonlar uchun
+        }
+    }
+}
+
+    .floating-box {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background: $white;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        z-index: 5;
+
+        &.bell { top: 10%; left: -15px; color: #4facfe; }
+        &.heart { bottom: 20%; left: -10px; color: $dark; }
+        &.check { top: 40%; right: -15px; color: $white; background: $pink; }
+    }
+
+    .review-card {
+        position: absolute;
+        bottom: 15px;
+        right: 10px;
+        background: $white;
+        padding: 10px 15px;
+        border-radius: 15px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        h4 { margin: 0; font-size: 16px; color: $dark; }
+        span { font-size: 10px; color: #666; }
+        .stars { color: #f39c12; font-size: 10px; }
+    }
+
+    // --- DESKTOPDA O'ZGARISHI ---
+    @media (min-width: 992px) {
+        .sazu-container {
+            flex-direction: row;
+            text-align: left;
+            padding: 40px;
+        }
+        .sazu-title { font-size: 60px; }
+        .sazu-search-box { margin-left: 0; }
+        .sazu-stats { justify-content: flex-start; }
+        .sazu-image-holder { max-width: 400px; height: 480px; }
+    }
+}
+main{
+    padding: 40px 0px;
+}
