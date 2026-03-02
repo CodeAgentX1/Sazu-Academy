@@ -1,0 +1,144 @@
+// 1. O'zgaruvchilar va Mixinlar
+$primary-dark: #0d1b3e;
+$transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+$card-radius: 12px;
+
+// 2. Asosiy Konteyner
+.categories {
+    padding: 70px 0;
+    background-color: #f9f9f9;
+    font-family: 'Inter', sans-serif;
+
+    .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 12px; // Yon chekkalarni siqdik
+        box-sizing: border-box;
+    }
+
+    .section-title {
+        font-size: clamp(24px, 5vw, 42px); // Ekran bilan birga kichrayadi
+        color: $primary-dark;
+        margin-bottom: 25px;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    // 3. Grid Tizimi (Eng muhim qismi)
+    .categories-grid {
+        display: grid;
+        width: 100%;
+        
+        // Standart (Desktop): 4 ta ustun
+        grid-template-columns: repeat(4, 1fr);
+        gap: 15px;
+
+        // Planshet: 3 ta ustun
+        @media (max-width: 992px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        // Mobil (768px dan boshlab 300px gacha): 2 TALIK QAT'IY
+        @media (max-width: 768px) {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px; // Kichik ekranda masofani kamaytirish
+        }
+
+        // Juda kichik ekranlar (Agar 300px dan ham kichik bo'lsa)
+        @media (max-width: 280px) {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+// 4. Card Dizayni va Manipulyatsiya
+.category-card {
+    position: relative;
+    width: 100%;
+    
+    // BO'YI KICHIK BO'LISHI UCHUN: 
+    // 1 / 1 (kvadrat) yoki 4 / 5 (sal uzunroq) qilsangiz bo'ladi.
+    // 380px fixed o'rniga shu ishlatiladi:
+    aspect-ratio: 1 / 1.2; 
+    
+    border-radius: $card-radius;
+    overflow: hidden;
+    cursor: pointer;
+    background: #e0e0e0;
+    transition: $transition-smooth;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+
+    // Rasm konteyneri
+    .img-wrapper {
+        width: 100%;
+        height: 100%;
+        
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; // Rasmni cho'zib yubormaydi
+            transition: transform 0.6s ease;
+        }
+    }
+
+    // Overlay (Pastdagi gradyent)
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            to top, 
+            rgba(0, 0, 0, 0.9) 0%, 
+            rgba(0, 0, 0, 0.4) 40%, 
+            transparent 70%
+        );
+        z-index: 1;
+        transition: opacity 0.3s;
+    }
+
+    // Matn qismi
+    .card-content {
+        position: absolute;
+        bottom: 15px;
+        left: 0;
+        width: 100%;
+        z-index: 2;
+        text-align: center;
+        padding: 0 10px;
+        box-sizing: border-box;
+
+        h3 {
+            color: #ffffff;
+            margin: 0;
+            font-weight: 600;
+            // Shrift o'lchami ekran bilan birga kichrayadi
+            font-size: clamp(0.85rem, 2.5vw, 1.1rem); 
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            transition: transform 0.4s ease;
+        }
+    }
+
+    // --- HOVER EFFEKTLARI (MANIPULATSIYA) ---
+    &:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+
+        .img-wrapper img {
+            transform: scale(1.1); // Rasm yaqinlashadi
+        }
+
+        .card-content h3 {
+            transform: translateY(-5px); // Matn sal ko'tariladi
+        }
+
+        &::after {
+            opacity: 0.9;
+        }
+    }
+
+    // Faol holat (bosilganda)
+    &:active {
+        transform: scale(0.95);
+    }
+}

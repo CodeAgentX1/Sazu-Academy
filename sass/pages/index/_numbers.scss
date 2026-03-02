@@ -1,0 +1,89 @@
+$primary-green: #28a745; // Sazu uslubidagi yashil
+$dark-blue: #0a1d37;
+$light-bg: #f8f9fa;
+$white: #ffffff;
+$transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+.stats-section {
+  padding: 80px 0;
+  background-color: $light-bg;
+  font-family: 'Poppins', sans-serif;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  text-align: center;
+}
+
+.stat-card {
+  background: $white;
+  padding: 40px 20px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: $transition;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 4px solid transparent;
+
+  &:hover {
+    transform: translateY(-15px);
+    border-bottom-color: $primary-green;
+    box-shadow: 0 20px 40px rgba(40, 167, 69, 0.2);
+
+    .icon-wrapper {
+      background: $primary-green;
+      color: $white;
+      transform: rotateY(360deg);
+    }
+  }
+
+  .icon-wrapper {
+    width: 70px;
+    height: 70px;
+    background: rgba($primary-green, 0.1);
+    color: $primary-green;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 30px;
+    transition: $transition;
+  }
+
+  .stat-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: $dark-blue;
+    margin-bottom: 10px;
+    
+    &::after {
+      content: '+';
+      color: $primary-green;
+    }
+  }
+
+  .stat-label {
+    font-size: 1.1rem;
+    color: #666;
+    font-weight: 500;
+  }
+}
+
+// Responsivelik
+@media (max-width: 768px) {
+  .stats-section {
+    padding: 50px 0;
+  }
+  .stat-number {
+    font-size: 2rem;
+  }
+}
