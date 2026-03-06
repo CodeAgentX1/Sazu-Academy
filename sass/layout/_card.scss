@@ -1,0 +1,194 @@
+// --- Sazu Academy Yashil Palitrasi ---
+$sazu-primary: #043213;   // Asosiy Sazu yashili
+$sazu-dark: #07294D;      // To'q ko'k (matn va sarlavhalar uchun)
+$sazu-accent: #FFCE00;    // Urg'u uchun sariq (hover yoki kichik elementlar)
+$text-muted: #555555;
+$bg-light: #F4F8FB;       // Juda och ko'k/kulrang fon
+
+// --- Umumiy Style ---
+.blog-section {
+    padding: 80px 0;
+    background-color: $bg-light;
+    font-family: 'Poppins', sans-serif; // Sazu'ga mos zamonaviy shrift
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .section-title {
+        font-size: 2.8rem;
+        color: $sazu-dark; // To'q ko'k sarlavha
+        margin-bottom: 55px;
+        font-weight: 800;
+        text-transform: capitalize;
+        position: relative;
+        display: inline-block;
+
+        // Sarlavha ostidagi yashil chiziq (Sazu uslubi)
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 60px;
+            height: 4px;
+            background-color: $sazu-primary;
+            border-radius: 2px;
+        }
+    }
+}
+
+// --- Grid va Card Style ---
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 35px;
+}
+
+.blog-card {
+    background: #ffffff;
+    border-radius: 20px; // Yumshoqroq burchaklar
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1); // Mayinroq o'tish
+    box-shadow: 0 10px 40px rgba($sazu-dark, 0.04);
+    cursor: pointer;
+    border: 1px solid rgba($sazu-dark, 0.03); // Deyarli ko'rinmas chegara
+    
+    // Hover effekti: Sazu Yashiliga urg'u
+    &:hover {
+        transform: translateY(-18px); // Sal ko'proq ko'tariladi
+        box-shadow: 0 25px 60px rgba($sazu-primary, 0.15); // Yashil soya
+        border-color: rgba($sazu-primary, 0.1);
+
+        .card-image::after {
+            opacity: 1;
+        }
+
+        .read-more {
+            color: $sazu-dark; // Hoverda to'q ko'k
+            
+            &::after {
+                width: 100%; // Chiziq to'ladi
+            }
+        }
+    }
+
+    // Rasm bloki
+    .card-image {
+        height: 220px;
+        background: #e0e0e0; // Rasm uchun joy
+        position: relative;
+        
+        // Rasm ustidagi yashil parda (overlay)
+        &::after {
+            content: 'Batafsil'; // O'zbekcha yozuv
+            position: absolute;
+            inset: 0;
+            background: rgba($sazu-primary, 0.8); // Shaffof yashil
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+            opacity: 0;
+            transition: 0.4s;
+            backdrop-filter: blur(2px); // Glassmorphism effekti
+        }
+    }
+
+    // Matn bloki
+    .card-content {
+        padding: 30px;
+
+        .card-meta {
+            font-size: 0.85rem;
+            color: $text-muted;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 500;
+
+            // Kichik belgi (bullet)
+            span:nth-child(2) {
+                color: $sazu-primary;
+                font-size: 1.2rem;
+            }
+        }
+
+        .card-title {
+            font-size: 1.4rem;
+            color: $sazu-dark; // To'q ko'k sarlavha
+            margin-bottom: 18px;
+            line-height: 1.4;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .card-text {
+            color: $text-muted;
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        // Read More havolasi
+        .read-more {
+            color: $sazu-primary; // Yashil havola
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            display: inline-block;
+            transition: 0.3s;
+            position: relative;
+
+            // Ostki chiziq effekti
+            &::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: -4px;
+                width: 40px;
+                height: 2px;
+                background-color: $sazu-accent; // Sariq ostki chiziq
+                transition: 0.3s;
+            }
+        }
+    }
+}
+
+// --- Mobile Responsive (Kichik tuzatishlar) ---
+@media (max-width: 768px) {
+    .blog-section {
+        padding: 50px 0;
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            width: 100%;
+            
+            &::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    }
+    
+    .blog-grid {
+        gap: 25px;
+    }
+    
+    .blog-card {
+        border-radius: 15px;
+        
+        .card-content {
+            padding: 20px;
+        }
+    }
+}
+
+
+// Footer

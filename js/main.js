@@ -207,3 +207,161 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.5 });
 
 observer.observe(statsSection);
+
+//Carousel
+
+const slides = document.querySelectorAll('.testimonial-item');
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
+let currentIndex = 0;
+
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.classList.remove('active');
+    if (i === index) {
+      slide.classList.add('active');
+    }
+  });
+}
+
+nextBtn.addEventListener('click', () => {
+  currentIndex++;
+  if (currentIndex >= slides.length) {
+    currentIndex = 0;
+  }
+  showSlide(currentIndex);
+});
+
+prevBtn.addEventListener('click', () => {
+  currentIndex--;
+  if (currentIndex < 0) {
+    currentIndex = slides.length - 1;
+  }
+  showSlide(currentIndex);
+});
+
+// Avtomatik aylanish (ixtiyoriy)
+setInterval(() => {
+  nextBtn.click();
+}, 5000);
+
+
+//Last Card JS
+const blogData = [
+    {
+        date: "3, Mei 2021",
+        read: "3 min read",
+        title: "Yaqin kunlarda bizning jamoamiz tomonidan hackathon tashkil etilmoqda.",
+        desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod."
+    },
+    {
+        date: "3, Mei 2021",
+        read: "3 min read",
+        title: "Right Triangle Trigonometry Explained",
+        desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod."
+    },
+    {
+        date: "3, Mei 2021",
+        read: "3 min read",
+        title: "2 Reasons Why You're Confusing Chemistry",
+        desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod."
+    }
+];
+
+const blogGrid = document.getElementById('blogGrid');
+
+// Cardlarni render qilish
+function renderCards() {
+    blogGrid.innerHTML = blogData.map(post => `
+        <div class="blog-card">
+            <div class="card-image"></div>
+            <div class="card-content">
+                <div class="card-meta">
+                    <span>${post.date}</span>
+                    <span>•</span>
+                    <span>${post.read}</span>
+                </div>
+                <h3 class="card-title">${post.title}</h3>
+                <p class="card-text">${post.desc}</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+    `).join('');
+}
+
+// Interaktiv manipulyatsiya: Sichqoncha harakatiga qarab yengil burilish (Tilt effect)
+document.addEventListener('mousemove', (e) => {
+    const cards = document.querySelectorAll('.blog-card');
+    cards.forEach(card => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        if (x > 0 && x < rect.width && y > 0 && y < rect.height) {
+            const xc = rect.width / 2;
+            const yc = rect.height / 2;
+            const dx = x - xc;
+            const dy = y - yc;
+            // Cardni yengil burish
+            card.style.transform = `perspective(1000px) rotateX(${-dy/20}deg) rotateY(${dx/20}deg) translateY(-10px)`;
+        } else {
+            card.style.transform = '';
+        }
+    });
+});
+
+renderCards();
+
+
+// Footer JS
+// Elementlarni tanlaymiz
+const headerSearch = document.querySelector('.search-box input');
+const overlayEl = document.querySelector('.search-overlay');
+const bodyEl = document.body;
+const coursesSection = document.querySelector('.courses');
+
+// Qidiruv funksiyasi
+function smartSearch(event) {
+    const val = event.target.value.toLowerCase().trim();
+
+    if (val.length > 0) {
+        // Effektni yoqish
+        bodyEl.classList.add('search-active');
+        
+        // Kurslar bo'limiga yumshoq siljish
+        coursesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+        // Input bo'sh bo'lsa hammasini o'z holiga qaytarish
+        bodyEl.classList.remove('search-active');
+    }
+
+    // Filtrlash (Sening 'products' massivingdan foydalanadi)
+    const filtered = products.filter(item => {
+        // Agar ob'ektda keywords bo'lmasa, xato bermasligi uchun tekshiramiz
+        const hasKeywords = item.keywords ? item.keywords.some(k => k.toLowerCase().includes(val)) : false;
+        
+        return (
+            item.name.toLowerCase().includes(val) || 
+            item.category.toLowerCase().includes(val) ||
+            hasKeywords
+        );
+    });
+
+    // Sening mavjud funksiyang orqali natijani chiqarish
+    displayCourses(filtered);
+}
+
+// Inputga yozishni boshlaganda
+headerSearch.addEventListener('input', smartSearch);
+
+// Overlay (oq fon) bosilganda qidiruvni yopish
+overlayEl.addEventListener('click', () => {
+    headerSearch.value = '';
+    bodyEl.classList.remove('search-active');
+    displayCourses(products); // Hamma kurslarni qaytarish
+});
+
+//
+
+
+//Carousel JS

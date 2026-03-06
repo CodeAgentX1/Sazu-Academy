@@ -1,4 +1,225 @@
-// Footer layout\n
-h1{
-    color: red;
+.sazu-footer-wrapper {
+  padding: 80px 20px 40px;
+  background-color: #f9fbfb; // Tashqi fon
+
+  .sazu-footer {
+    max-width: 1240px;
+    margin: 0 auto;
+
+    .footer-container {
+      background: linear-gradient(145deg, #0b2e24 0%, #061d17 100%);
+      border-radius: 32px;
+      padding: 80px 60px 40px;
+      color: #e6f4f1;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
+      position: relative;
+      overflow: hidden;
+
+      // Dekorativ effekt (premium ko'rinish uchun)
+      &::before {
+        content: '';
+        position: absolute;
+        top: -100px;
+        right: -100px;
+        width: 300px;
+        height: 300px;
+        background: radial-gradient(circle, rgba(0, 230, 118, 0.08) 0%, transparent 70%);
+        border-radius: 50%;
+      }
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 60px;
+      margin-bottom: 60px;
+
+      .footer-brand {
+        flex: 0 1 350px;
+
+        .logo {
+          margin-bottom: 28px;
+          img {
+            height: 160px; // Desktop uchun optimal
+            width: auto;
+            filter: brightness(1.1);
+          }
+        }
+
+        p {
+          font-size: 16px;
+          line-height: 1.7;
+          color: #b5d8cf;
+          opacity: 0.9;
+        }
+      }
+
+      .footer-links {
+        flex: 1;
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+
+        .footer-column {
+          h3 {
+            margin-bottom: 24px;
+            font-size: 18px;
+            font-weight: 600;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+          }
+
+          ul {
+            list-style: none;
+            padding: 0;
+
+            li {
+              margin-bottom: 14px;
+              a {
+                text-decoration: none;
+                color: #b5d8cf;
+                font-size: 15px;
+                transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                display: inline-block;
+
+                &:hover {
+                  color: #00e676;
+                  transform: translateX(8px);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      p { font-size: 14px; color: #8eb7ad; }
+
+      .bottom-links {
+        display: flex;
+        gap: 30px;
+        a {
+          text-decoration: none;
+          font-size: 14px;
+          color: #8eb7ad;
+          transition: 0.3s;
+          &:hover { color: #00e676; }
+        }
+      }
+    }
+  }
+
+  // ======================
+  // SMART RESPONSIVE
+  // ======================
+
+  // Planshet uchun (Tablet)
+  @media (max-width: 1024px) {
+    padding: 60px 15px;
+    
+    .sazu-footer .footer-container {
+      padding: 60px 40px 30px;
+    }
+
+    .sazu-footer .footer-top {
+      gap: 40px;
+      .footer-brand { flex: 0 1 280px; }
+    }
+  }
+
+  // Mobil uchun (Full Adaptive)
+  @media (max-width: 850px) {
+    .sazu-footer .footer-top {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+      .footer-brand {
+        flex: 1 1 100%;
+        margin-bottom: 40px;
+        .logo { display: flex; justify-content: center; }
+        p { max-width: 400px; margin: 0 auto; }
+      }
+
+      .footer-links {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); // 2 ustunli chiroyli grid
+        gap: 40px 20px;
+        text-align: left;
+
+        // "Company" bo'limini markazga chiroyli joylashtirish
+        .footer-column:nth-child(3) {
+          grid-column: span 2;
+          text-align: center;
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+
+  // Kichik mobil telefonlar uchun
+  @media (max-width: 480px) {
+    .sazu-footer .footer-container { padding: 50px 25px 30px; }
+
+    .sazu-footer .footer-top .footer-links {
+      grid-template-columns: 1fr; // Hammasi 1 qator bo'ladi
+      text-align: center;
+      
+      .footer-column:nth-child(3) { margin-top: 0; }
+    }
+
+    .sazu-footer .footer-bottom {
+      flex-direction: column-reverse;
+      gap: 20px;
+      p { font-size: 13px; }
+    }
+  }
+}
+
+
+
+// Body 
+// Butun ekranni oqartirib turuvchi qatlam
+.search-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.96); // Juda tiniq oq fon
+  z-index: 90; // Headerdan bir pog'ona past
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease-in-out;
+  backdrop-filter: blur(8px); // Orqa fonni chiroyli xiralashtirish
+}
+
+// Qidiruv faollashganda body holati
+body.search-active {
+  overflow: hidden; // Skrollni to'xtatish (ixtiyoriy)
+
+  .search-overlay {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .header {
+    z-index: 100; // Header overlay ustida qolishi shart
+    background: #fff; // Header oq fon bo'lishi kerak
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  }
+
+  .courses {
+    position: relative;
+    z-index: 95; // Kurslar overlay ustiga chiqib, diqqat markazida bo'ladi
+  }
 }

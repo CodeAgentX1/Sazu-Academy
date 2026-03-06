@@ -1,0 +1,382 @@
+// O'zgaruvchilar
+$sazu-green: #28a745;
+$sazu-dark: #0a1d37;
+$sazu-pink: #247127; // Rasmdagi pushti rang
+$white: #ffffff;
+$text-muted: #666;
+$transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+.mentor-section {
+  padding: 100px 0;
+  background-color: #fcfcfc;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+}
+
+.mentor-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+
+  @media (max-width: 992px) {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+// Rasm qismi va WOW effektlar
+.mentor-image {
+  flex: 1;
+  position: relative;
+  
+  .image-bg-shape {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba($sazu-green, 0.1);
+    border-radius: 30px;
+    top: 20px;
+    left: -20px;
+    z-index: 1;
+    transition: $transition;
+  }
+
+  img {
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+    border-radius: 30px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    transition: $transition;
+  }
+
+  &:hover {
+    img {
+      transform: scale(1.02) rotate(-2deg);
+      box-shadow: 0 30px 60px rgba($sazu-green, 0.2);
+    }
+    .image-bg-shape {
+      transform: translate(10px, -10px);
+      background: rgba($sazu-green, 0.2);
+    }
+  }
+}
+
+// Kontent qismi
+.mentor-content {
+  flex: 1;
+
+  .mentor-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: $sazu-dark;
+    margin-bottom: 25px;
+
+    span {
+      color: $sazu-green; // Sazu uslubidagi yashil urg'u
+    }
+
+    @media (max-width: 576px) {
+      font-size: 2.2rem;
+    }
+  }
+
+  .text-group {
+    p {
+      font-size: 1.1rem;
+      color: $text-muted;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+// Pulsatsiyalanuvchi tugma effekti
+.btn-start {
+  display: inline-flex;
+  align-items: center;
+  background: $sazu-pink;
+  color: $white;
+  padding: 18px 45px;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba($sazu-pink, 0.3);
+
+  span {
+    z-index: 2;
+  }
+
+  i {
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: 0.5s;
+  }
+
+  &:hover {
+    background: darken($sazu-pink, 5%);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba($sazu-pink, 0.5);
+
+    &::before {
+      left: 100%;
+    }
+
+    i {
+      transform: translateX(5px);
+    }
+  }
+
+  // Pulsatsiya animatsiyasi
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba($sazu-pink, 0.4); }
+  70% { box-shadow: 0 0 0 15px rgba($sazu-pink, 0); }
+  100% { box-shadow: 0 0 0 0 rgba($sazu-pink, 0); }
+}
+
+// Testimonial kartalari
+$sazu-green: #28a745;
+$sazu-dark: #0a1d37;
+$transition: all 0.5s ease-in-out;
+
+.testimonial-section {
+  padding: 80px 0;
+  background-color: #fff;
+  overflow: hidden;
+
+  .testimonial-slider {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+
+    .testimonial-item {
+      display: none; // Standart holatda yashirin
+      animation: fadeIn 0.8s ease;
+
+      &.active {
+        display: block;
+      }
+
+      .testimonial-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        gap: 50px;
+        align-items: center;
+
+        @media (max-width: 768px) {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+
+        .image-area {
+          position: relative;
+          
+          .pattern-box {
+            position: absolute;
+            bottom: -20px;
+            left: -20px;
+            width: 150px;
+            height: 150px;
+            background: repeating-linear-gradient(
+              45deg,
+              #eee,
+              #eee 10px,
+              #fff 10px,
+              #fff 20px
+            );
+            border-radius: 50%;
+            z-index: 1;
+          }
+
+          img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 20px;
+            position: relative;
+            z-index: 2;
+            box-shadow: 20px 20px 60px rgba(0,0,0,0.05);
+          }
+        }
+
+        .content-area {
+          .quote-text {
+            font-size: 1.8rem;
+            color: $sazu-dark;
+            font-weight: 600;
+            line-height: 1.4;
+            margin-bottom: 30px;
+          }
+
+          .author-info {
+            .name {
+              font-size: 1.4rem;
+              color: $sazu-dark;
+              margin: 0;
+            }
+            .position {
+              color: $sazu-green;
+              font-weight: 500;
+              margin-top: 5px;
+            }
+          }
+        }
+      }
+    }
+
+    .slider-nav {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      z-index: 10;
+
+      @media (max-width: 1100px) {
+        position: static;
+        margin-top: 30px;
+        justify-content: center;
+        gap: 20px;
+        transform: none;
+      }
+
+      .nav-btn {
+        background: #304a11;
+        border: 1px solid #eee;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        color: $sazu-dark;
+        cursor: pointer;
+        transition: $transition;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+
+        &:hover {
+          background: $sazu-green;
+          color: #fff;
+          border-color: $sazu-green;
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+// Logos
+$sazu-green: #28a745;
+$sazu-dark: #0a1d37;
+
+.partners-marquee {
+  padding: 80px 0;
+  background: #fff;
+  overflow: hidden;
+
+  .section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 50px;
+    color: $sazu-dark;
+    span { color: $sazu-green; }
+  }
+
+  .marquee-wrapper {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 20px 0;
+
+    // Yon tomonlardagi yumshoq o'chib borish effekti (Fade)
+    &::before, &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 150px;
+      height: 100%;
+      z-index: 2;
+    }
+    &::before {
+      left: 0;
+      background: linear-gradient(to right, white, transparent);
+    }
+    &::after {
+      right: 0;
+      background: linear-gradient(to left, white, transparent);
+    }
+  }
+
+  .marquee-content {
+    display: flex;
+    width: max-content;
+    gap: 80px; // Logotiplar orasidagi masofa
+    animation: scrollMarquee 30s linear infinite; // To'xtovsiz harakat
+
+    &:hover {
+      animation-play-state: paused; // Sichqoncha ustiga kelganda to'xtaydi
+    }
+
+    .partner-logo {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+
+      .logo-ispum6 {
+        font-size: 40px;
+      }
+
+      img {
+        height: 50px; // Logotip balandligi
+        width: auto;
+        filter: grayscale(100%);
+        opacity: 0.5;
+        transition: all 0.3s ease;
+
+        &:hover {
+          filter: grayscale(0%);
+          opacity: 1;
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}
+
+// Animatsiya logic-i
+@keyframes scrollMarquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } // Nusxalangan qismga yetganda qaytadi
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .marquee-content { gap: 40px; }
+  .partner-logo img { height: 35px; }
+}

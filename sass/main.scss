@@ -16,6 +16,7 @@
 @use "layout/grid";
 @use "layout/header";
 @use "layout/footer";
+@use "layout/card"; // Sidebar ham bor ekan, qo'shib qo'ydim
 @use "layout/sidebar"; // Sidebar ham bor ekan, qo'shib qo'ydim
 
 // 5. Components (Komponentlar)
@@ -33,3 +34,4 @@
 @use "pages/index/monipulation";
 @use "pages/index/categories";
 @use "pages/index/numbers";
+@use "pages/index/mentor";
