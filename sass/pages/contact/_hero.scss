@@ -1,0 +1,365 @@
+$primary: #1fb566; // Sazu yashil
+$dark: #1e212c;
+$text: #424551;
+$transition: all 0.3s ease;
+
+.contact-section {
+  padding: 80px 0;
+  background-color: #fff;
+
+  .container {
+    max-width: 1230px; // Sazu Academy konteyner o'lchami
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+ 
+}
+
+.contact-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 160px;
+
+  @media (max-width: 992px) {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+.contact-info {
+  flex: 0 0 400px;
+
+  &__subtitle {
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    color: $dark;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+  }
+
+  &__title {
+    font-size: 46px;
+    font-weight: 900;
+    color: $dark;
+    margin-bottom: 40px;
+    
+    @media (max-width: 576px) {
+      font-size: 34px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  @media (max-width: 576px) {
+    .contact-info__subtitle{
+        text-align: center;
+    }
+    .contact-info__title{
+        text-align: center;
+    }
+  }
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+
+  &__icon {
+    font-size: 20px;
+    color: $primary;
+    margin-top: 4px;
+  }
+
+  &__content {
+    p {
+      font-weight: 700;
+      font-size: 14px;
+      color: $text;
+      margin-bottom: 4px;
+      opacity: 0.7;
+    }
+    a, span {
+      font-size: 18px;
+      color: $dark;
+      font-weight: 400;
+      text-decoration: none;
+      transition: $transition;
+      
+    }
+    a:hover {
+      color: $primary;
+    }
+    .call{
+@media (max-width: 576px) {
+    text-align: center;
+  }
+    }
+  }
+  
+}
+
+.contact-socials {
+  margin-top: 48px;
+  
+  p {
+    font-weight: 700;
+    font-size: 16px;
+    color: $dark;
+    margin-bottom: 20px;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 12px;
+
+    a {
+      width: 44px;
+      height: 44px;
+      background: #f4f5f6;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #787a80;
+      font-size: 18px;
+      transition: $transition;
+
+      &:hover {
+        background: $primary;
+        color: #fff;
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(31, 181, 102, 0.2);
+      }
+      
+      // Ijtimoiy tarmoqlar o'z ranglari hoverda (ixtiyoriy, agar faqat yashil bo'lsin desangiz o'chiring)
+      &.fb:hover { background: #5198c2; }
+      &.tg:hover { background: #6baed3; }
+      &.inst:hover { background: #d8d5ec; }
+    }
+  }
+  @media (max-width: 576px) {
+   p{
+    text-align: center;
+   }
+   .social-links{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+   }
+  }
+}
+
+// KATTA XARITA QISMI
+.contact-map {
+  flex: 1; // Kartani maksimal kengaytirish uchun
+  height: 450px;
+  width: 600px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  border: 1px solid #f1f1f1;
+  transition: $transition;
+
+  &:hover {
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+  }
+
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  @media (max-width: 576px) {
+    height: 350px;
+    width: 355px;
+  }
+}
+
+// Second Section
+$primary: #1fb566;
+$dark: #1e212c;
+$text: #424551;
+$border: #d7dadd;
+
+.request-section {
+  padding: 100px 0;
+  background-color: #fff;
+
+  .container {
+    max-width: 1230px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+}
+
+.request-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+
+.request-image {
+  flex: 1;
+  text-align: center;
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  @media (max-width: 1024px) {
+    order: 2; // Mobilda rasm pastga tushadi
+    max-width: 350px;
+  }
+}
+
+.request-content {
+  flex: 1.5;
+
+  .request-subtitle {
+    font-weight: 700;
+    font-size: 16px;
+    color: $dark;
+  }
+
+  .request-title {
+    font-size: 46px;
+    font-weight: 900;
+    color: $dark;
+    margin: 8px 0 40px;
+  }
+}
+
+// FORMA ELEMENTLARI
+.contact-form {
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 24px;
+
+    @media (max-width: 576px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    label {
+      font-size: 14px;
+      color: $text;
+    }
+
+    input, textarea {
+      padding: 13px 16px;
+      border: 1px solid $border;
+      border-radius: 4px;
+      font-size: 16px;
+      transition: all 0.3s;
+
+      &:focus {
+        border-color: $primary;
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(31, 181, 102, 0.1);
+      }
+
+      &::placeholder {
+        color: #9a9ca5;
+      }
+    }
+  }
+
+  .full-width {
+    margin-bottom: 40px;
+  }
+}
+
+// FOOTER VA TUGMA
+.form-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  @media (max-width: 576px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .btn-submit {
+    background-color: $primary;
+    color: #fff;
+    padding: 14px 40px;
+    border: none;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: darken($primary, 7%);
+      box-shadow: 0 10px 20px rgba(31, 181, 102, 0.2);
+    }
+  }
+}
+
+// CHECKBOX CUSTOM
+.checkbox-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  font-size: 14px;
+  color: $text;
+  user-select: none;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0; width: 0;
+  }
+
+  .checkmark {
+    position: absolute;
+    top: 0; left: 0;
+    height: 20px; width: 20px;
+    background-color: #fff;
+    border: 1px solid $border;
+    border-radius: 4px;
+
+    &:after {
+      content: "";
+      position: absolute;
+      display: none;
+      left: 6px; top: 2px;
+      width: 5px; height: 10px;
+      border: solid white;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+  }
+
+  input:checked ~ .checkmark {
+    background-color: $primary;
+    border-color: $primary;
+    &:after { display: block; }
+  }
+}

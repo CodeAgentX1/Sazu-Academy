@@ -1,100 +1,120 @@
-$sazu-green: #004d40;
-$sazu-gold: #ffc107;
-$sazu-white: #ffffff;
-$sazu-soft-gray: #f8f9fa;
+.container1{
+ 
 
-.sazu-discovery-zone {
-    padding: 50px 20px;
-    overflow: hidden; // Karusel chetga chiqib ketmasligi uchun
+  .courses{
 
-    .sazu-top-bar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        max-width: 1200px;
-        margin: 0 auto 30px;
-
-        .sazu-title {
-            color: $sazu-green;
-            font-size: 32px;
-            font-weight: 800;
-            border-bottom: 4px solid $sazu-gold;
-        }
-
-        .sazu-nav-btn {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            border: none;
-            background: #e0e0e0;
-            cursor: pointer;
-            transition: 0.3s;
-            margin-left: 10px;
-
-            &.active {
-                background: $sazu-green;
-                color: white;
-                box-shadow: 0 10px 20px rgba(0, 77, 64, 0.3);
-            }
-
-            &:hover { transform: scale(1.1); }
-        }
-    }
-}
-
-.sazu-carousel-viewport {
-    max-width: 1200px;
-    margin: 0 auto;
-    position: relative;
-}
-
-.sazu-carousel-track {
-    display: flex;
-    gap: 25px;
-    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); // Yumshoq siljish
-    will-change: transform;
-}
-
-.sazu-course-card {
-    min-width: calc(33.33% - 20px); // Bir vaqtda 3 ta kurs ko'rinadi
-    background: white;
-    border-radius: 20px;
-    padding: 15px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.06);
-    border: 1px solid #eee;
-
-    .course-thumb {
-        height: 200px;
-        background: $sazu-green;
-        border-radius: 15px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 60px;
-        color: white;
-        margin-bottom: 20px;
+    &__header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:40px;
     }
 
-    .course-info {
-        padding: 0 10px;
-        .cat-tag {
-            color: $sazu-green;
-            font-weight: 700;
-            font-size: 12px;
-            text-transform: uppercase;
-        }
-        h3 { margin: 10px 0; font-size: 20px; color: #333; height: 55px; }
-        
-        .price-box {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-top: 20px;
-            padding-top: 15px;
-            border-top: 1px solid #f0f0f0;
-
-            .price-current { font-size: 24px; font-weight: 800; color: $sazu-green; }
-            .price-old { color: #bbb; text-decoration: line-through; }
-        }
+    &__title{
+      font-size:42px;
+      font-weight:800;
+      color:#0f5132;
+      line-height:1.2;
     }
+
+    &__buttons{
+      display:flex;
+      gap:15px;
+    }
+
+    &__btn{
+      width:55px;
+      height:55px;
+      border:none;
+      border-radius:50%;
+      background:#0f7a63;
+      color:white;
+      font-size:26px;
+      cursor:pointer;
+      z-index:50;
+      position:relative;
+
+      &:hover{
+        background:#0c5f4d;
+      }
+    }
+
+    &__carousel{
+      overflow:hidden;
+    }
+
+    &__track{
+      display:flex;
+      gap:25px;
+      transition:transform .5s ease;
+    }
+
+  }
+
+  .course-card{
+    min-width:280px;
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,0.1);
+
+    img{
+      width:100%;
+      height:180px;
+      object-fit:cover;
+    }
+
+    &__content{
+      padding:20px;
+    }
+
+    &__tag{
+      background:#0f7a63;
+      color:white;
+      padding:6px 14px;
+      border-radius:20px;
+      font-size:14px;
+    }
+
+    h3{
+      margin:15px 0 5px;
+      font-size:20px;
+      color:#083d31;
+    }
+
+    p{
+      color:#0f7a63;
+      margin-bottom:10px;
+    }
+
+    &__price{
+      .old{
+        text-decoration:line-through;
+        color:#999;
+        margin-right:10px;
+      }
+
+      .new{
+        color:#0f7a63;
+        font-weight:700;
+        font-size:20px;
+      }
+    }
+  }
+}
+
+@media (max-width:992px){
+  .course-card{
+    min-width:240px;
+  }
+}
+
+@media (max-width:600px){
+  .courses__title{
+    font-size:30px !important;
+  }
+
+  .course-card{
+    min-width:85%;
+  }
 }

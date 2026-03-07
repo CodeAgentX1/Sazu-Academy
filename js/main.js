@@ -364,4 +364,3 @@ overlayEl.addEventListener('click', () => {
 //
 
 
-//Carousel JS

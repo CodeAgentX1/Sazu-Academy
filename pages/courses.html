@@ -14,14 +14,14 @@
   <div class="container">
 
     <!-- LOGO -->
-    <a href="#" class="logo">
+    <a href="/index.html" class="logo">
       <img src="/images/logos/sazu.png" alt="Sazu Academy Logo">
     </a>
 
     <!-- SEARCH -->
     <div class="search-box">
       <input type="text" placeholder="Search courses...">
-      <div class="search-icon"><img src="./images/logos/search_input.svg" alt=""></div>
+      <div class="search-icon"><img src="/images/logos/search_input.svg" alt=""></div>
     </div>
 
     <!-- NAVIGATION -->
@@ -41,10 +41,10 @@
           <span class="arrow"></span>
         </button>
         <div class="dropdown-menu">
-          <a href="#">Courses</a>
-          <a href="#">Detail Courses</a>
-          <a href="#">Blog</a>
-          <a href="#">Accaunt</a>
+          <a href="./detail.html">Detail Courses</a>
+          <a href="/pages/blog.html">Blog</a>
+          <a href="/pages/accaunt.html">Accaunt</a>
+          <a href="/pages/contact.html">Contact US</a>
         </div>
       </div>
 
@@ -67,7 +67,134 @@
 
 
 <main>
-    
+<section class="container1">
+  <div class="courses">
+
+    <div class="courses__header">
+      <h2 class="courses__title">
+        Most Popular <br>
+        Development Courses
+      </h2>
+
+      <div class="courses__buttons">
+        <button class="courses__btn courses__btn--prev">&#10094;</button>
+        <button class="courses__btn courses__btn--next">&#10095;</button>
+      </div>
+    </div>
+
+    <div class="courses__carousel">
+      <div class="courses__track">
+
+        <!-- CARD -->
+        <div class="course-card">
+          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" alt="">
+          <div class="course-card__content">
+            <span class="course-card__tag">Frontend</span>
+            <h3>Modern HTML CSS Mastery</h3>
+            <p>Sazu Academy</p>
+            <div class="course-card__price">
+              <span class="old">$640</span>
+              <span class="new">$420</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="course-card">
+          <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c" alt="">
+          <div class="course-card__content">
+            <span class="course-card__tag">JavaScript</span>
+            <h3>JavaScript Hero Course</h3>
+            <p>Sazu Academy</p>
+            <div class="course-card__price">
+              <span class="old">$640</span>
+              <span class="new">$420</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="course-card">
+          <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f" alt="">
+          <div class="course-card__content">
+            <span class="course-card__tag">Backend</span>
+            <h3>NodeJS Backend Course</h3>
+            <p>Sazu Academy</p>
+            <div class="course-card__price">
+              <span class="old">$640</span>
+              <span class="new">$420</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="course-card">
+          <img src="https://images.unsplash.com/photo-1537432376769-00a6c5c36f4d" alt="">
+          <div class="course-card__content">
+            <span class="course-card__tag">React</span>
+            <h3>React Developer Bootcamp</h3>
+            <p>Sazu Academy</p>
+            <div class="course-card__price">
+              <span class="old">$640</span>
+              <span class="new">$420</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="course-card">
+          <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6" alt="">
+          <div class="course-card__content">
+            <span class="course-card__tag">Vue</span>
+            <h3>VueJS Master Course</h3>
+            <p>Sazu Academy</p>
+            <div class="course-card__price">
+              <span class="old">$640</span>
+              <span class="new">$420</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="course-card">
+          <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd" alt="">
+          <div class="course-card__content">
+            <span class="course-card__tag">Python</span>
+            <h3>Python for Developers</h3>
+            <p>Sazu Academy</p>
+            <div class="course-card__price">
+              <span class="old">$640</span>
+              <span class="new">$420</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="course-card">
+          <img src="https://images.unsplash.com/photo-1587620962725-abab7fe55159" alt="">
+          <div class="course-card__content">
+            <span class="course-card__tag">UI UX</span>
+            <h3>UI UX Design Mastery</h3>
+            <p>Sazu Academy</p>
+            <div class="course-card__price">
+              <span class="old">$640</span>
+              <span class="new">$420</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="course-card">
+          <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b" alt="">
+          <div class="course-card__content">
+            <span class="course-card__tag">Fullstack</span>
+            <h3>Fullstack Developer</h3>
+            <p>Sazu Academy</p>
+            <div class="course-card__price">
+              <span class="old">$640</span>
+              <span class="new">$420</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
 </main>
 
 
@@ -131,6 +258,6 @@
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="/js/main.js"></script>
+<script src="/js/courses.js"></script>
 </body>
 </html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sazu Academy</title>
+<link rel="stylesheet" href="/sass/main.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+
+    <!-- LOGO -->
+    <a href="/index.html" class="logo">
+      <img src="/images/logos/sazu.png" alt="Sazu Academy Logo">
+    </a>
+
+    <!-- SEARCH -->
+    <div class="search-box">
+      <input type="text" placeholder="Search courses...">
+      <div class="search-icon"><img src="/images/logos/search_input.svg" alt=""></div>
+    </div>
+
+    <!-- NAVIGATION -->
+    <nav class="nav">
+      <div class="mobile-nav-top">
+        <div class="search-box mobile-search">
+          <input type="text" id="searchInput" placeholder="Search courses...">
+          <div class="search-icon"><img src="/images/logos/search_input.svg" alt=""></div>
+        </div>
+      </div>
+
+      <a class="mentor" href="#">Become a Mentor</a>
+
+      <div class="dropdown">
+        <button class="drop-btn">
+          Category
+          <span class="arrow"></span>
+        </button>
+        <div class="dropdown-menu">
+          <a href="#">Courses</a>
+          <a href="#">Detail Courses</a>
+          <a href="#">Blog</a>
+          <a href="#">Accaunt</a>
+        </div>
+      </div>
+
+      <a href="#" class="btn-outline">Login</a>
+      <a href="#" class="btn-primary">Sign Up</a>
+    </nav>
+
+    <!-- TOGGLE -->
+    <div class="menu-toggle">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+
+  </div>
+</header>
+
+<div class="mobile-overlay"></div>
+<div class="search-overlay"></div>
+
+<section class="contact-section">
+  <div class="container">
+    <div class="contact-wrapper">
+      
+      <div class="contact-info">
+        <span class="contact-info__subtitle">CONTACT INFO</span>
+        <h2 class="contact-info__title">Get in touch</h2>
+        
+        <div class="contact-info__list">
+          <div class="contact-item">
+            <div class="contact-item__icon"><i class="far fa-envelope"></i></div>
+            <div class="contact-item__content">
+              <p>Talk to us:</p>
+              <a href="mailto:hello@createx.com">sazuacademy@gmail.com</a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-item__icon"><i class="fas fa-mobile-alt"></i></div>
+            <div class="contact-item__content">
+              <p class="call">Call us:</p>
+              <a href="tel:4055550128">(+998) 95 307 70 70    </a>
+               <div class="div">
+                  <a href="tel:4055550128"> (+998) 99 804 14 41</a>
+
+            </div>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-item__icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="contact-item__content">
+              <p>Address:</p>
+              <span>Toshkent sh., Shayxontohur tumani, Ko'kcha, Shayx Zayniddin masjidi ro'parasi</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-socials">
+          <p>FOLLOW US:</p>
+          <div class="social-links">
+             <a href="https://www.instagram.com/sazuacademy?igsh=NGtqN2lmMmxmb3pn" class="inst"><img src="/images/logos/Vector.png" alt=""></a>
+            <a href="https://t.me/sazuacademy" class="tg"><img src="/images/logos/Vector (1).png" alt=""></a>
+            <a href="https://www.facebook.com/people/SazuAcademy/61567174056305/?locale=ga_IE#" class="fb"><img src="/images/logos/Vector (2).png" alt=""></a>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d749.0999941182469!2d69.2055229!3d41.32191510000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1suz!2sus!4v1772852474066!5m2!1suz!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+
+    </div>
+  </div>
+</section>
+<section class="request-section">
+  <div class="container">
+    <div class="request-wrapper">
+      
+      <div class="request-image">
+        <img src="/images/backgrounds/illustration.png" alt="Contact illustration">
+      </div>
+
+      <div class="request-content">
+        <span class="request-subtitle">ANY QUESTIONS?</span>
+        <h2 class="request-title">Drop us a line</h2>
+
+        <form action="#" class="contact-form">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="first-name">First Name*</label>
+              <input type="text" id="first-name" placeholder="Your first name" required>
+            </div>
+            <div class="form-group">
+              <label for="last-name">Last Name*</label>
+              <input type="text" id="last-name" placeholder="Your last name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email*</label>
+              <input type="email" id="email" placeholder="Your working email" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" placeholder="Your phone number">
+            </div>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="message">Message*</label>
+            <textarea id="message" rows="4" placeholder="Your message" required></textarea>
+          </div>
+
+          <div class="form-footer">
+            <label class="checkbox-container">
+              <input type="checkbox" checked>
+              <span class="checkmark"></span>
+              I agree to receive communications from Sazu Academy
+            </label>
+            <button type="submit" class="btn-submit">Send message</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<div class="sazu-footer-wrapper">
+  <footer class="sazu-footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        
+        <div class="footer-brand">
+          <div class="logo">
+            <img src="/images/logos/sazu-removebg-preview.png" alt="Sazu Academy">
+          </div>
+          <p>
+            Professional courses and powerful mentors.
+            Grow your skills and build your future with us.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <div class="footer-column">
+            <h3>About</h3>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Courses</a></li>
+              <li><a href="#">Mentors</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3>Support</h3>
+            <ul>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Help Center</a></li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3>Company</h3>
+            <ul>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Code of Conduct</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Sazu Academy. All rights reserved.</p>
+        <div class="bottom-links">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+
+<script src="/js/main.js"></script>
+</body>
+</html>
