@@ -5,6 +5,14 @@
     padding: 20px;
 }
 
+.container3{
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
 .card {
     background: #fff;
     border-radius: 10px;
@@ -87,6 +95,23 @@
     margin-bottom: 40px;
 }
 
+.details-btn{
+display:inline-block;
+margin-top:12px;
+background: #0f4f2e;;
+color:white;
+padding:8px 15px;
+border-radius:6px;
+font-size:14px;
+text-decoration:none;
+}
+
+.details-btn:hover{
+background:#1e6006;
+transition: all 0.6s;
+}
+
+
 @media (max-width: 768px) {
   .our {
     font-size: 30px !important;
@@ -94,4 +119,251 @@
   .courses{
     padding: 50px 0px;
 }
+}
+
+/// COuses Style
+.container{
+max-width:1200px;
+margin:auto;
+padding:0 20px;
+}
+
+.courses-page{
+padding:80px 0;
+
+.page-title{
+text-align:center;
+font-size:42px;
+margin-bottom:50px;
+font-weight:700;
+}
+
+.all-courses{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+}
+
+.course-card{
+background:#fff;
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
+transition:all .35s ease;
+cursor:pointer;
+
+&:hover{
+transform:translateY(-10px);
+box-shadow:0 15px 35px rgba(0,0,0,0.15);
+}
+
+img{
+width:100%;
+height:170px;
+object-fit:cover;
+}
+
+h3{
+font-size:18px;
+margin:15px 15px 5px;
+color:#111;
+}
+
+p{
+margin:0 15px;
+font-size:14px;
+color:#777;
+}
+
+.course-price{
+margin:15px;
+font-size:20px;
+font-weight:700;
+color:#2a5f1e;
+}
+
+}
+
+}
+
+
+
+//bonus
+.bonus{
+background:#f5f6ff;
+padding:70px 0;
+
+.bonus-title{
+text-align:center;
+font-size:34px;
+margin-bottom:40px;
+font-weight:700;
+}
+
+.bonus-cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+}
+
+.bonus-card{
+background:white;
+padding:25px;
+border-radius:10px;
+text-align:center;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+transition:.3s;
+
+&:hover{
+transform:translateY(-6px);
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+h3{
+font-size:16px;
+margin-bottom:10px;
+}
+
+span{
+font-size:18px;
+font-weight:700;
+color:#4f723b;
+}
+
+}
+
+}
+
+
+//mobile
+@media (max-width:768px){
+
+.courses-page{
+
+.page-title{
+font-size:30px;
+}
+
+}
+
+.bonus{
+
+.bonus-title{
+font-size:26px;
+}
+
+}
+
+}
+
+
+// keyfrems
+.course-card{
+
+opacity:0;
+transform:translateY(40px);
+animation:cardFade .6s forwards;
+
+}
+
+@keyframes cardFade{
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+// Bonus card images
+.bonus{
+padding:90px 0;
+background:linear-gradient(135deg,#f5f7ff,#eef1ff);
+
+.bonus-title{
+text-align:center;
+font-size:36px;
+margin-bottom:50px;
+font-weight:700;
+}
+
+.bonus-cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.bonus-card{
+background:#fff;
+border-radius:14px;
+overflow:hidden;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+transition:.35s;
+cursor:pointer;
+position:relative;
+
+&:hover{
+transform:translateY(-12px);
+box-shadow:0 20px 45px rgba(0,0,0,0.15);
+}
+
+.bonus-img{
+
+height:160px;
+overflow:hidden;
+
+img{
+width:100%;
+height:105%;
+object-fit:cover;
+transition:.4s;
+border-radius: 17px;
+}
+
+}
+
+
+
+.bonus-body{
+padding:20px;
+text-align:center;
+
+h3{
+font-size:18px;
+margin-bottom:10px;
+color:#111;
+}
+
+.bonus-price{
+font-size:20px;
+font-weight:700;
+color:#086818;
+}
+
+}
+
+}
+
+}
+
+
+// 
+@media (max-width:768px){
+
+.bonus{
+
+.bonus-title{
+font-size:26px;
+}
+
+.bonus-card{
+
+.bonus-img{
+height:140px;
+}
+
+}
+
+}
+
 }

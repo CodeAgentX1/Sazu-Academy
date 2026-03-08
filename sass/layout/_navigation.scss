@@ -1,1 +1,12 @@
 // Navigation layout\n
+/* Belglangan matnning orqa foni va harf rangini o'zgartirish */
+::selection {
+    background-color: #187445; /* Orqa fon rangi (masalan, neon aqua) */
+    color: #ffffff;            /* Matnning o'zi qaysi rangda bo'lishi */
+}
+
+/* Firefox brauzeri uchun (ba'zi eski versiyalarda kerak bo'ladi) */
+::-moz-selection {
+    background-color:#0f4f2e;
+    color: #bbccb7;
+}

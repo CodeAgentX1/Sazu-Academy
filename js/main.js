@@ -1,66 +1,23 @@
-const dropdown = document.querySelector(".dropdown");
-const dropBtn = document.querySelector(".drop-btn");
-const toggle = document.querySelector(".menu-toggle");
-const nav = document.querySelector(".nav");
-const overlay = document.querySelector(".mobile-overlay");
-const mobileBreakpoint = window.matchMedia("(max-width: 992px)");
+// Header
+const menuToggle = document.querySelector(".menu-toggle")
+const nav = document.querySelector(".nav")
+const overlay = document.querySelector(".mobile-overlay")
 
-const closeMobileMenu = () => {
-  toggle.classList.remove("active");
-  nav.classList.remove("active");
-  overlay.classList.remove("active");
-  document.body.classList.remove("menu-open");
-  dropdown.classList.remove("active");
-};
+menuToggle.addEventListener("click", () => {
 
-/* DROPDOWN */
-dropBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  dropdown.classList.toggle("active");
-});
+menuToggle.classList.toggle("active")
+nav.classList.toggle("active")
+overlay.classList.toggle("active")
 
-/* CLOSE dropdown when click outside */
-document.addEventListener("click", (e) => {
-  if (!dropdown.contains(e.target)) {
-    dropdown.classList.remove("active");
-  }
-});
-
-/* MOBILE MENU */
-toggle.addEventListener("click", () => {
-  toggle.classList.toggle("active");
-  nav.classList.toggle("active");
-  overlay.classList.toggle("active");
-  document.body.classList.toggle("menu-open");
-});
+})
 
 overlay.addEventListener("click", () => {
-  closeMobileMenu();
-});
 
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") {
-    closeMobileMenu();
-  }
-});
+menuToggle.classList.remove("active")
+nav.classList.remove("active")
+overlay.classList.remove("active")
 
-mobileBreakpoint.addEventListener("change", (e) => {
-  if (!e.matches) {
-    closeMobileMenu();
-  }
-});
-
-nav.querySelectorAll("a").forEach((link) => {
-  link.addEventListener("click", () => {
-    closeMobileMenu();
-  });
-});
-
-/* Scroll shadow */
-window.addEventListener("scroll",()=>{
-  document.querySelector(".header")
-  .classList.toggle("scrolled",window.scrollY>10);
-});
+})
 
 
 //Home-section Animation
@@ -93,15 +50,73 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 const products = [
-  { id: 1, name: "English for Beginners", category: "English", price: 550.000, oldPrice: 740, rating: 5, reviews: 2078, image: "/images/other/usa.png" },
-  { id: 2, name: "German Grammar Mastery", category: "German", price: 735, oldPrice: 640, rating: 5, reviews: 2078, image: "/images/other/germany.png" },
-  { id: 3, name: "Business Russian", category: "Russian", price: 826, oldPrice: 640, rating: 5, reviews: 2078, image: "/images/other/russia.png" },
-  { id: 4, name: "French Culture & Lang", category: "French", price: 710, oldPrice: 640, rating: 4.5, reviews: 2078, image: "/images/other/french.png" },
-  { id: 5, name: "Turkish Speaking Club", category: "Turkish", price: 384, oldPrice: 640, rating: 5, reviews: 2078, image: "/images/other/turkey.png" },
-  { id: 6, name: "Advanced Spanish", category: "Spanish", price: 758, oldPrice: 640, rating: 3.5, reviews: 2078, image: "/images/other/spain.png" },
-  { id: 7, name: "IELTS Preparation", category: "English", price: 973, oldPrice: 640, rating: 3.5, reviews: 2078, image: "/images/other/uk.png" },
-  { id: 8, name: "Daily Conversations", category: "Russian", price: 273, oldPrice: 640, rating: 4.5, reviews: 2078, image: "/images/other/ru.png" },
+
+{
+id:1,
+name:"General English",
+category:"English",
+price:"540 000",
+oldPrice:"600 000",
+rating:5,
+image:"/images/other/usa.png"
+},
+{
+id:6,
+name:"IELTS Preparation",
+category:"English",
+price:"650 000",
+oldPrice:"700 000",
+rating:5,
+image:"/images/other/ielts.png"
+},
+
+{
+id:3,
+name:"Matematika",
+category:"Math",
+price:"490 000",
+oldPrice:"550 000",
+rating:5,
+image:"/images/other/math2.png"
+},
+
+
+{
+id:4,
+name:"IT Frontend",
+category:"IT",
+price:"800 000",
+oldPrice:"900 000",
+rating:5,
+image:"/images/other/frontend.png"
+},
+
+
+{
+id:5,
+name:"IT Backend",
+category:"IT",
+price:"800 000",
+oldPrice:"900 000",
+rating:5,
+image:"/images/other/backend.png"
+}
+,
+
+{
+id:2,
+name:"Rus tili",
+category:"Russian",
+price:"490 000",
+oldPrice:"550 000",
+rating:4,
+image:"/images/other/russia.png"
+}
+
+
+
 ];
+
 
 const mainCards = document.querySelector('.main-cards');
 
@@ -110,26 +125,33 @@ function displayCourses(data) {
         // Yulduzchalarni chiqarish uchun kichik logika
         let stars = "⭐".repeat(Math.floor(course.rating));
         
-        return `
-            <div class="card">
-                <div class="card-image">
-                    <img src="${course.image}" alt="${course.name}">
-                    <span class="badge">${course.category}</span>
-                </div>
-                <div class="card-body">
-                    <h3>${course.name}</h3>
-                    <p class="author">Tanah Air Team</p>
-                    <div class="rating">
-                        <span class="stars">${stars}</span>
-                        <span class="reviews">(${course.reviews})</span>
-                    </div>
-                    <div class="price-section">
-                        <span class="old-price">$${course.oldPrice}</span>
-                        <span class="current-price">$${course.price}</span>
-                    </div>
-                </div>
-            </div>
-        `;
+       return `
+<div class="card">
+    <div class="card-image">
+        <img src="${course.image}" alt="${course.name}">
+        <span class="badge">${course.category}</span>
+    </div>
+
+    <div class="card-body">
+        <h3>${course.name}</h3>
+        <p class="author">Tanah Air Team</p>
+
+        <div class="rating">
+            <span class="stars">${stars}</span>
+        </div>
+
+        <div class="price-section">
+            <span class="old-price">${course.oldPrice} so'm</span>
+            <span class="current-price">${course.price} so'm</span>
+        </div>
+
+        <a href="../pages/courses.html?id=${course.id}" class="details-btn">
+            Batafsil
+        </a>
+    </div>
+</div>
+`;
+
     }).join('');
 }
 
@@ -362,5 +384,6 @@ overlayEl.addEventListener('click', () => {
 });
 
 //
+
 
 

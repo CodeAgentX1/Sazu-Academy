@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sazu Academy</title>
+<link rel="stylesheet" href="/sass/main.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+ <header class="header">
+  <div class="container">
+
+    <!-- LOGO -->
+    <a href="/index.html" class="logo">
+      <img src="/images/logos/sazu.png" alt="Sazu Academy Logo">
+    </a>
+
+    <!-- NAVIGATION -->
+    <nav class="nav main-nav">
+      <a href="/index.html">Bosh sahifa</a>
+      <a href="/pages/detail.html">Detail Courses</a>
+      <a href="/pages/blog.html">Blog</a>
+      <a href="/pages/accaunt.html">Account</a>
+      <a href="/pages/courses.html">Kurslar</a>
+      <a href="/pages/contact.html" class="btn-primary">Bog'lanish</a>
+      <a href="#" class="btn-outline">Ro'yxatdan o'tish</a>
+    </nav>
+
+    <!-- MOBILE MENU TOGGLE -->
+    <div class="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+  </div>
+</header>
+
+<!-- Mobile overlay -->
+<div class="mobile-overlay"></div>
+
+<main>
+    <section class="reviews" id="reviews">
+
+  <div class="reviews__container">
+    <h2 class="reviews__title">O'quvchilarning izohlari🤩
+     </h2>
+    <div class="reviews__carousel">
+      <button class="reviews__arrow reviews__arrow--prev">&larr;</button>
+
+      <div class="reviews__track-wrapper">
+        <div class="reviews__track">
+          <!-- 12 ta slide -->
+          <!-- 1 -->
+          <div class="reviews__slide">
+            <img
+              src="/images/feedback/fikr1.jpg"
+              alt="O'quvchi izohi 1"
+              class="reviews__img"
+              data-index="0"
+            />
+          </div>
+          <!-- 2 -->
+          <div class="reviews__slide">
+            <img
+              src="/images/feedback/fikr2.jpg"
+              alt="O'quvchi izohi 2"
+              class="reviews__img"
+              data-index="1"
+            />
+          </div>
+          <!-- 3 -->
+          <div class="reviews__slide">
+            <img
+              src="/images/feedback/fikr3.jpg"
+              alt="O'quvchi izohi 3"
+              class="reviews__img"
+              data-index="2"
+            />
+          </div>
+          <!-- 4 -->
+          <div class="reviews__slide">
+            <img
+              src="/images/feedback/fikr4.jpg"
+              alt="O'quvchi izohi 4"
+              class="reviews__img"
+              data-index="3"
+            />
+          </div>
+          <!-- 5 -->
+          <div class="reviews__slide">
+            <img
+              src="/images/feedback/fikr5.jpg"
+              alt="O'quvchi izohi 5"
+              class="reviews__img"
+              data-index="4"
+            />
+          </div>
+          <!-- 6 -->
+          <div class="reviews__slide">
+            <img
+              src="/images/feedback/fikr6.jpg"
+              alt="O'quvchi izohi 6"
+              class="reviews__img"
+              data-index="5"
+            />
+          </div>
+          <!-- 7 -->
+          <div class="reviews__slide">
+            <img
+              src="/images/feedback/fikr7.jpg"
+              alt="O'quvchi izohi 7"
+              class="reviews__img"
+              data-index="6"
+            />
+          </div>
+          <!-- 8 -->
+          <div class="reviews__slide">
+            <img
+              src="/images/feedback/fikr8.jpg"
+              alt="O'quvchi izohi 8"
+              class="reviews__img"
+              data-index="7"
+            />
+          </div>
+          <!-- 9 -->
+          <div class="reviews__slide">
+            <img
+              src="/images/feedback/fikr9.jpg"
+              alt="O'quvchi izohi 9"
+              class="reviews__img"
+              data-index="8"
+            />
+          </div>
+          <!-- 10 -->
+          <div class="reviews__slide">
+            <img
+              src="/images/feedback/fikr10.jpg"
+              alt="O'quvchi izohi 10"
+              class="reviews__img"
+              data-index="9"
+            />
+          </div>
+          <!-- 11 -->
+          <div class="reviews__slide">
+            <img
+              src="/images/feedback/fikr11.jpg"
+              alt="O'quvchi izohi 11"
+              class="reviews__img"
+              data-index="10"
+            />
+          </div>
+          <!-- 12 -->
+          <div class="reviews__slide">
+            <img
+              src="/images/feedback/fikr12.jpg"
+              alt="O'quvchi izohi 12"
+              class="reviews__img"
+              data-index="11"
+            />
+          </div>
+        </div>
+      </div>
+
+      <button class="reviews__arrow reviews__arrow--next">&rarr;</button>
+    </div>
+
+    <div class="reviews__dots">
+      <!-- JS orqali dotlar qo‘shiladi -->
+    </div>
+  </div>
+
+  <!-- Modal (lightbox) -->
+  <div class="reviews-modal" id="reviewsModal">
+    <div class="reviews-modal__backdrop"></div>
+    <div class="reviews-modal__content">
+      <button class="reviews-modal__close" aria-label="Yopish">&times;</button>
+      <img src="" alt="Review fullscreen" class="reviews-modal__img" />
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <h2 class="logo">{SazuAcademy}</h2>
+        <p>Maxsus dasturiy yechimlar</p>
+
+        <div class="socials">
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <h4>Kompaniya</h4>
+        <a href="#">Biz haqimizda</a>
+        <a href="#">Karyera</a>
+        <a href="#">Xizmatlar</a>
+        <a href="#">Blog</a>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Aloqa</h4>
+        <p>info@sazuacademy.uz</p>
+        <p>+998 90 123 45 67</p>
+      </div>
+
+      <div class="footer-newsletter">
+        <h4>Yangiliklarga obuna</h4>
+
+        <div class="newsletter">
+          <input type="email" placeholder="Emailingizni kiriting">
+          <button>Obuna bo'lish</button>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Barcha huquqlar himoyalangan — <b>Ismoiljon tomonidan qilingan</b></p>
+
+      <div class="footer-policy">
+        <a href="#">Maxfiylik siyosati</a>
+        <a href="#">Foydalanish shartlari</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+
+
+
+<script src="/js/detail.js"></script>
+</body>
+</html>
