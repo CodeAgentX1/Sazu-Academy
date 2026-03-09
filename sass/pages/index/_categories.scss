@@ -71,16 +71,15 @@ $card-radius: 12px;
 
     // Rasm konteyneri
     .img-wrapper {
+    width: 100%;
+    height: 100%;
+
+    img {
         width: 100%;
         height: 100%;
-        
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; // Rasmni cho'zib yubormaydi
-            transition: transform 0.6s ease;
-        }
+        object-fit: cover;
     }
+}
 
     // Overlay (Pastdagi gradyent)
     &::after {
@@ -95,6 +94,7 @@ $card-radius: 12px;
         );
         z-index: 1;
         transition: opacity 0.3s;
+        
     }
 
     // Matn qismi
@@ -122,9 +122,12 @@ $card-radius: 12px;
     // --- HOVER EFFEKTLARI (MANIPULATSIYA) ---
     &:hover {
         transform: translateY(-8px);
+        transition: all 0.6s;
         box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
 
         .img-wrapper img {
+                    transition: all 0.6s;
+
             transform: scale(1.1); // Rasm yaqinlashadi
         }
 

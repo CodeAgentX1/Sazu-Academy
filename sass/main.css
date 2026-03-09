@@ -1196,7 +1196,6 @@ main {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  transition: transform 0.6s ease;
 }
 .category-card::after {
   content: "";
@@ -1226,9 +1225,11 @@ main {
 }
 .category-card:hover {
   transform: translateY(-8px);
+  transition: all 0.6s;
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
 }
 .category-card:hover .img-wrapper img {
+  transition: all 0.6s;
   transform: scale(1.1);
 }
 .category-card:hover .card-content h3 {
